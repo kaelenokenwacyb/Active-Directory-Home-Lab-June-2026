@@ -27,4 +27,32 @@ Afterwards came actually installing Active Directory Domain Services onto my ser
 
 The final step of this setup process was creating a user. Through Active Directory, I navigated to Tools > New > User and created my first user (matching up to the host VM that I plan to use for this lab). After setting a username and password and changing some of the settings (ex. making the password never expire - I would never do this in an actual Active Directory environment, but since this is an isolated lab I'm doing it for ease of use), I was finally able to join the host VM with my domain. Through my host VM, I navigated to the Windows settings and through "Access work and school", I was able to successfully join the local Active Directory domain that I created earlier. After entering the domain name, using the login credentials created earlier for the user, and adding the account, I was successfully able to finish setup of my Active Directory lab.
 
+Next tasks:
+Users and Groups
+- Create users (done)
+- Create security groups
+- Assign Permissions
+
+Organizational Units (OU)
+- Create departments (IT, finance, ...)
+- Organize users and computers
+- Delegate administration
+
+Group Policy
+- Password Policies
+- Account lockout policies
+- Disable control panel
+- Map network drives
+- Configure desktop settings
+
+Security Concepts:
+- Create admin and standard user accounts
+- Test access controls
+- Audit logon events
+- Explore account lockout behavior
+
+Powershell
+- Bulk create users
+- Disable inactive accounts
+- Query AD users and groups
 ...
