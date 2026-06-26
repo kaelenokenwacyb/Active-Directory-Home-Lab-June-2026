@@ -32,7 +32,7 @@ Next tasks:
 Users and Groups
 - Create users --- Created 12 users; 3 users per organizational position (IT, HR, Sales, and Finance)
 - Create security groups --- Created security groups for users based on organizational position
-- Assign Permissions --- Created shared folders for all separate organizational groups. Added groups (ex. IT_Users) to the security permission for respective organizational positions, and gave specific NTFS permissions to each. IT cannot access Sales folders, Sales cannot access HR folders, etc.
+- (FIX) Assign Permissions --- Created shared folders for all separate organizational groups. Added groups (ex. IT_Users) to the security permission for respective organizational positions, and gave specific NTFS permissions to each. IT cannot access Sales folders, Sales cannot access HR folders, etc.
 
 Organizational Units (OU)
 - Create departments (IT, finance, etc) --- Created OUs through Server Manager based on made up departments (finance, HR, IT, etc.) for more organized structure, to be able to apply grouping policies, delegate admin control, etc. Leave "protect container from accidental deletion" for good practice
@@ -40,17 +40,17 @@ Organizational Units (OU)
 - Delegate administration --- Currently working on delegating permissions to HR as a test. Please hold...
 
 Group Policy
-- Password Policies
-- Account lockout policies
-- Disable control panel
-- Map network drives
-- Configure desktop settings
+- Password Policies --- Edited password polocies through the Group Policy Management Editor to better match a secure system. These changes apply to all users under the domain
+- Account lockout policies --- Edited account lockout policies through the Group Policy Management Editor, settin a total of 5 possible attempts and a 15 min lockout if these attempts are used up. Tested this through the users on my host VM, and also practiced unlocking a user account through Users and Groups settings
+- Disable control panel --- Through Group Policy Management Editor, tested our disabling the control panel for a specific group. Updated policy on the account of the HR (group affected), and made sure control panel was not accessible.
+- (FIX) Map network drives --- In this part of the lab, you implemented automated network drive mapping using Group Policy Preferences (GPP) to simulate a real enterprise environment where users automatically receive department-specific network drives upon login.
+- Configure desktop settings --- Configured desktop settings to disable certain features, such as changing the background, rmoving Run menu from the start menu, etc. using the Group Policy Management Editor
 
 Security Concepts:
-- Create admin and standard user accounts
-- Test access controls
-- Audit logon events
-- Explore account lockout behavior
+- Forcing password reset, disabling account, etc. --- Used Active Directory Users and Computers to implement some of these changes, and tested them with Test User1
+- Test access controls --- Control panel restrictions, drive mapping, 
+- Audit logon events --- Allow for audit tracking and view log on (4624) and log off (4634) attempts, as well as incorrect password attempts (4625)
+- Explore account lockout behavior --- Explored lockout after xx amount of attempts (5), viewed locked account status in ADUC, manually unlocked account
 
 Powershell
 - Bulk create users
