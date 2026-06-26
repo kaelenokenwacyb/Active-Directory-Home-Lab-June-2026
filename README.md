@@ -27,16 +27,17 @@ Afterwards came actually installing Active Directory Domain Services onto my ser
 
 The final step of this setup process was creating a user. Through Active Directory, I navigated to Tools > New > User and created my first user (matching up to the host VM that I plan to use for this lab). After setting a username and password and changing some of the settings (ex. making the password never expire - I would never do this in an actual Active Directory environment, but since this is an isolated lab I'm doing it for ease of use), I was finally able to join the host VM with my domain. Through my host VM, I navigated to the Windows settings and through "Access work and school", I was able to successfully join the local Active Directory domain that I created earlier. After entering the domain name, using the login credentials created earlier for the user, and adding the account, I was successfully able to finish setup of my Active Directory lab.
 
+**Note - To access shared folders, press Win + R and then type \\10.0.2.3**
 Next tasks:
 Users and Groups
-- Create users (done)
-- Create security groups
-- Assign Permissions
+- Create users --- Created 12 users; 3 users per organizational position (IT, HR, Sales, and Finance)
+- Create security groups --- Created security groups for users based on organizational position
+- Assign Permissions --- Created shared folders for all separate organizational groups. Added groups (ex. IT_Users) to the security permission for respective organizational positions, and gave specific NTFS permissions to each. IT cannot access Sales folders, Sales cannot access HR folders, etc.
 
 Organizational Units (OU)
-- Create departments (IT, finance, ...)
-- Organize users and computers
-- Delegate administration
+- Create departments (IT, finance, etc) --- Created OUs through Server Manager based on made up departments (finance, HR, IT, etc.) for more organized structure, to be able to apply grouping policies, delegate admin control, etc. Leave "protect container from accidental deletion" for good practice
+- Organize users and computers --- Organized users into respective OUs and also placed computer into "Workstations" OU
+- Delegate administration --- Currently working on delegating permissions to HR as a test. Please hold...
 
 Group Policy
 - Password Policies
