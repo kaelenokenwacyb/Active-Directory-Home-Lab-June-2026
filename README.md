@@ -38,15 +38,13 @@ Note: More depth to each of these phases can be found below where I explain each
 
 Lab Setup
 - Virtual machine + hypervisor creation
-- Active Directory Domain Services installation
-- Domain creation + joining
+- Active Directory Domain Services installation + Domain Setup
 
 Identity and Policy Management + Testing
 - OU Creation
 - Users & Groups
 - Group Policy Congifuration
 - Password and lockout policies
-- Access restrictions
 - Verifying Access and Control
 - Audit Analysis
 
@@ -83,13 +81,9 @@ After this configuration, I was able to add in my Windows 10 ISO, moving me into
 <img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/3120782f-d224-497c-a6b6-1c7078946f57" />
 <img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/fb9e5e71-a399-4c34-8c86-6dc16fac40c6" />
 
-### Domain Creation
+### Active Directory Installation + Domain Setup
 
-The next step in the process was configuring my host virtual machine on the same IP address as my Windows Server 2022. Through the use of the command prompt within my server virtual machine, I was able to find the IP address being used and set it to the same one within my host. This allowed for my host virtual machine to join the domain in which I'll be performing any Active Directory actions. 
-
-### Active Directory Installation + Domain Joining
-
-Afterwards came actualy installing Active Directory Domain Services onto my server virtual machine. After installing through the Server Manager, I created a new forest through the server's post-deployment configuration so that I could successfully use the Active Directory services. After creating a DSRM (Directory Services Restore Mode) password, I had successfully installed Active Directory and was ready to begin making users.
+The next step in the process was configuring my host virtual machine on the same IP address as my Windows Server 2022. Through the use of the command prompt within my server virtual machine, I was able to find the IP address being used and set it to the same one within my host. This allowed for my host virtual machine to join the domain in which I'll be performing any Active Directory actions. Afterwards came actualy installing Active Directory Domain Services onto my server virtual machine. After installing through the Server Manager, I created a new forest through the server's post-deployment configuration so that I could successfully use the Active Directory services. After creating a DSRM (Directory Services Restore Mode) password, I had successfully installed Active Directory and was ready to begin making users.
 
 <img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/c6bc90a4-857e-449f-8e65-663a1b67c2bf" />
 <img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/a268fb5c-82fc-48be-8b36-584409bd8683" />
@@ -105,7 +99,102 @@ Through my host VM, I navigated to the Windows settings and through "Access work
 
 ## Identity and Policy Management + Testing
 
---
+The next part of this lab was actually beginning to handle various activities within Active Directory. This section is the true depth of the project, providing me with first hand exprience as to some of the work that an actual IT Support or Help Desk employee would do. 
+
+### OU Creation
+Starting this section off, the first step that I decided to take was creating various organizational units. As seen within my diagram above, the OUs that I created were meant to simulate an actual organizational structure, allowing me to get as close as possible to the actual work that this lab is meant to simulate.
+
+<img width="1018" height="788" alt="image" src="https://github.com/user-attachments/assets/8a6edbdd-30a1-40f0-b69b-3b79efe268b2" />
+
+With these OUs, I would be able to practice many concepts, such as making grouping policies, delegating admin control, etc. Outside of the organizational OUs, that I made, I also decided to create OUs specifically for users (for future use when I return to this project with more users), and a workstation OU, allowing me to move my desktop there for further organization in terms of having structure through Active Directory.
+
+<img width="1023" height="791" alt="image" src="https://github.com/user-attachments/assets/38694b2e-51f8-41db-a1b6-08e324e68e62" />
+
+### Users and Groups
+With my organizational units being completed, next up was creating actual users to populate each simulated organizational area. For this lab, I decided to create 3 users per organizational unit. Each unit (HR, Finance, Sales, and HR) would have their own simulated users with specific files and permissions. Below are the users within each organizational group.
+
+<img width="1022" height="850" alt="image" src="https://github.com/user-attachments/assets/197e8854-6043-42e1-830d-bf0a5f79c6b5" />
+<img width="1018" height="849" alt="image" src="https://github.com/user-attachments/assets/761edd7f-7c2f-498b-beb4-815640bf7f59" />
+<img width="1024" height="852" alt="image" src="https://github.com/user-attachments/assets/34a37c35-dcd5-4282-b13d-c802f2e786b7" />
+<img width="1016" height="853" alt="image" src="https://github.com/user-attachments/assets/8aa9fc19-5654-49fe-8fda-7d9ab057e116" />
+
+I then created security groups for each group of users based on their organizational position. This allowed for me to bundle all of my users into manageable groups that can be assigned specific permissions and powers depending on which part of the organization they belong to.
+
+<img width="1026" height="851" alt="image" src="https://github.com/user-attachments/assets/2a02ab11-8cb1-4466-8758-00c4dacb1528" />
+
+With the users and security groups being made, I could begin assigning specific NTFS permissions to different groups of users.  To gain experience and test giving permissions, I decided to create a set of folders for each organizational unit that would house documents specifically made for each separate unit. With the permissions provided, each group should only be allowed to access the contents of their own folders (ex. IT cannot access HR folders, etc.). After making these folders, I went into the properties to change the specific allowances for the IT_Users group.
+
+<img width="1021" height="852" alt="image" src="https://github.com/user-attachments/assets/000c8c22-b722-45ec-9ce8-47973d64cd79" />
+<img width="1025" height="852" alt="image" src="https://github.com/user-attachments/assets/0f224e64-4060-4601-870a-ecfc2cb147be" />
+
+To test this out, I tried to make an IT department user access a sales department folder, in which you can see the permissions stopped this from occurring. 
+
+<img width="916" height="823" alt="image" src="https://github.com/user-attachments/assets/b92907bc-c44b-46bb-a3d9-843ee1241ee7" />
+
+By testing each action that I do, I can not only verify that what I did works, but also gain practice into the good habit of verifying that the changes you make work without assuming. Before moving onto the next portion, I wanted to make an attempt at providing admin permissions to one of my organizational groups as well, hoping that I would be able to successfully complete this. With that being said, I decided to delegate admin permissions to HR department users to test the capabilities. Using the Delegation of Control Wizard, I was able to provide HR users with these permissions, allowing them to create, delete, and manage user accounts, as well as reset user passwords. I wanted the HR department users to be able to simulate what an actual HR employee does in a real-world workplace.
+
+<img width="1019" height="853" alt="image" src="https://github.com/user-attachments/assets/f0e24961-1b6a-4654-88f9-020083d645ec" />
+<img width="1021" height="850" alt="image" src="https://github.com/user-attachments/assets/9499fdb3-b3f1-4a38-9e9f-a2129ec00a9a" />
+
+### Group Policy Configuration
+The next step that I wanted to test out within my lab was setting up group policies controlling more of what they can and can't access within the computer. I decided to try out a simple change, focusing on the desktop customization and control panel access this time around. In order to create these policies, I used the Group Policy Management Editor tool within Server Manager to continue testing with my HR users sample group. Within the Policy Management Editor, I found the default domain policy that was currently set to be active, and then located the setting that prohibits access to the Control Panel and PC settings for HR users, just to test and see if this permission would work if changed. After actually changing the policy so that HR users could no longer access the Control Pancel and PC settings, I then had to update said policy through my host virtual machine's command prompt for it to take full effect.
+
+<img width="1121" height="859" alt="image" src="https://github.com/user-attachments/assets/258dee72-031f-40c0-9fc9-fb34d6bc04b5" />
+<img width="1119" height="855" alt="image" src="https://github.com/user-attachments/assets/3d033d4c-708e-458b-b4d9-25f0a3f4eb9b" />
+<img width="1169" height="887" alt="image" src="https://github.com/user-attachments/assets/5d756f52-aba7-4586-b906-fcc4f9fde209" />
+
+After attempting to open the control panel to see if this worked, an error message occured stating that restrictions had been put in place, showing me that this process did work in the end. 
+
+<img width="901" height="853" alt="image" src="https://github.com/user-attachments/assets/585d67bc-9eab-4d48-a912-e9be864065a2" />
+
+To test this further, I decided to disable desktop customization to see if this would also function as intended. Similar to how I changed the control panel settings, I navigated through the Group Policy Management Editor to find personalization settings - specifically on being able to edit the desktop background. After finding this setting and turning it on, I tested it again by making an attempt on this HR user to change the background, in which I was again greeted with an error message.
+
+<img width="973" height="855" alt="image" src="https://github.com/user-attachments/assets/318f117c-210b-4f6c-ac26-23203133c995" />
+<img width="879" height="850" alt="image" src="https://github.com/user-attachments/assets/81f63603-110f-45d4-a09f-ff5e9d14a383" />
+
+Testing policies and permissions was one of the biggest highlights of this project for me, as it shows that Active Directory gives the user accessibility when it comes to managing an organization and ensuring that access is divided into specific, organized sections rather than being in a random structure.
+
+### Password and Lockout Policies
+With my group policies working well, the next thing that I knew I had to tackle was password and lockout policies. This is one of the main areas that an IT worker handles on the day-to-day basis, with passwords constantly being forgotten and mixed up, and the worker having the resposibility of helping those on the other end recover their accounts.
+
+Once again within the Group Policy Management Editor, I found the settings for password management that would allow me to control the rquirements for a password upon being created. There are various settings here that I decided to change, such as the minimum password length, maximum password age, and all passwords requiring a certain amount of complexity.
+
+<img width="1119" height="859" alt="image" src="https://github.com/user-attachments/assets/4605b8fd-2567-4a19-8f6a-dd10145ca4de" />
+<img width="1121" height="861" alt="image" src="https://github.com/user-attachments/assets/5f6f86b9-1309-4ac6-bb99-dba0cf768dda" />
+<img width="1121" height="859" alt="image" src="https://github.com/user-attachments/assets/6d8ed36e-58bd-4be0-bdbb-eb21e648d623" />
+
+I also decided to make an attempt at a policy in which a user would be locked out after 5 attempt of inputting an incorrect password. This is important on a security standpoint, where someonme could be attempting to access a device that they shouldn't be in. With that being said, I logged out of my HR user in which I made these changes, and maed sure that these lockdown policies were put into effect. 
+
+<img width="1118" height="857" alt="image" src="https://github.com/user-attachments/assets/74422253-5726-471f-b0db-5367095ba5d4" />
+<img width="1123" height="861" alt="image" src="https://github.com/user-attachments/assets/1340bcfe-c8c1-4f0b-88ec-d47c9fc4613e" />
+<img width="972" height="850" alt="image" src="https://github.com/user-attachments/assets/fe1ec072-5218-4909-b230-15f0c271898d" />
+
+To ensure that this lockdown worked (and to test unlocking said user's account), I used Server Manager once again to locate the user's account, and within properties, unlock their account so that they could once again access it andinput the correct password.
+
+<img width="1128" height="861" alt="image" src="https://github.com/user-attachments/assets/bcca4275-b089-44f5-be16-2ead3049c164" />
+
+### Verifying Access and Control
+Next, I wanted to test the control settings for disabling user accounts and also resetting user passwords if they are locked out of their account. Disabling a user account is helpful for when you don't want to necessarily delete an account, but you want to cease access while still having your own access to the data, security identifier(s), etc. Once again through the Server Manager's Active Directory Users and Computers section, I decided to test out disabling a sample account that I had created (Test User). Through the users screen, I created and selected this user, and pressed disable account. I wanted to ensure that this change worked, so using this sample user's login credentials, I attempted a log in.
+
+<img width="977" height="856" alt="image" src="https://github.com/user-attachments/assets/6d5a14ff-a40c-49e1-a4a1-2b9f1a8f16b5" />
+<img width="903" height="905" alt="image" src="https://github.com/user-attachments/assets/9fe2e789-041f-4a75-922f-c21e84350d82" />
+
+This process worked successfully, as the account was no longer accessible. To reverse this change, I simply had to go back into the Users and Computers section and repeat the same process, this time selecting to enable the account an allow the user to log in. Next, I attempted to force users to reset their password upon logging in again. Within the same section as before, I navigated to the same test user, and went to their account settings through properties, checking the "User must change password at next logon" option. With this, you can ensure that passwords stay protected or changed in the case that a breach or other issue occurs. 
+
+<img width="979" height="859" alt="image" src="https://github.com/user-attachments/assets/6f3170d6-0544-491c-8c83-6877c2005bd3" />
+<img width="902" height="854" alt="image" src="https://github.com/user-attachments/assets/ba0fd431-8c0a-439f-9f23-e04d83a91d27" />
+
+With this now working and the system making the user reset their password at this next login, there was one more thing I wanted to test.
+
+### Audit Analysis
+The final process that I wanted to ensure that I could do within the 'Users and Groups' section was seeing an audit log of events that occur within these user accounts. An audit list is useful for tracking who does waht within your network, and when these actions were performed. To begin with this, I used the Group Policy Management Editor to change the type of audit information that is shown within my domain. To start off with somehting simple, I decided to enable Audit Logon and Audit Logoff information, showing me when users log in and log out of their accounts. With that being said, afterwards I opened up Event Viewer within my WinServer virtual machine, and navigated to Windows Logs > Security to view the various logon and logoff times of my various sample users. The event IDs listed hold different meanings, with 4624 being a log on, 4634 being a logoff, and 4625 being an incorrect password attempt.
+
+<img width="977" height="865" alt="image" src="https://github.com/user-attachments/assets/7053029f-ba6b-4391-8e89-31d50897b9f4" />
+<img width="974" height="861" alt="image" src="https://github.com/user-attachments/assets/d91ccacc-ca81-48f9-9867-5e67a1395f6b" />
+<img width="977" height="870" alt="image" src="https://github.com/user-attachments/assets/7d94765d-69ee-47a1-a4ed-8f5fb6dc2d9e" />
+<img width="977" height="866" alt="image" src="https://github.com/user-attachments/assets/47c94d3a-3cc4-4787-b8f6-6b5621517b64" />
+
+Through exploring this audit list, I can keep track of what happens within my environment to gain hands-on experience with user activity management.
 
 ## Powershell Automation
 
