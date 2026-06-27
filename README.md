@@ -34,7 +34,7 @@ The architecture of this project was based around my home PC in which was used t
 <img width="1800" height="1200" alt="My Physical PC" src="https://github.com/user-attachments/assets/33431bfa-4efd-4d71-beaa-f6744def3728" />
 
 # Project Phases
-Note: More depth to each of these phases can be found within the repository files where I explain each one in depth with screenshots
+Note: More depth to each of these phases can be found below where I explain each one in depth with screenshots
 
 Lab Setup
 - Virtual machine creation
@@ -67,3 +67,5 @@ Another challenge arose when testing Group Policy configurations within the HR_U
 Overall, these challenges reinforced the importance of methodical troubleshooting, attention to detail, and independent research when working in IT environments.
 
 In a real-world context, this lab closely reflects responsibilities commonly found in IT support or help desk roles, such as managing user accounts, handling password resets and account lockouts, configuring access permissions, and maintaining organizational resources. This experience has helped prepare me for similar responsibilities in a professional environment and will serve as a strong foundation for my future career in IT.
+
+## In-Depth Explanations
