@@ -53,7 +53,8 @@ Security Concepts:
 - Explore account lockout behavior --- Explored lockout after xx amount of attempts (5), viewed locked account status in ADUC, manually unlocked account
 
 Powershell
-- Bulk create users
-- Disable inactive accounts
-- Query AD users and groups
+- Bulk create users --- Used Powershell to add bulk amount of users to domain...
+- Disable inactive accounts --- Done..
+- Query AD users and groups --- Done..
+Will finish documentation and everything tomorrow morning.
 ...
