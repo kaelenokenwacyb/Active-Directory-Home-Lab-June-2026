@@ -91,23 +91,17 @@ The next step in the process was configuring my host virtual machine on the same
 
 Afterwards came actualy installing Active Directory Domain Services onto my server virtual machine. After installing through the Server Manager, I created a new forest through the server's post-deployment configuration so that I could successfully use the Active Directory services. After creating a DSRM (Directory Services Restore Mode) password, I had successfully installed Active Directory and was ready to begin making users.
 
-<img width="1023" height="847" alt="image" src="https://github.com/user-attachments/assets/c6bc90a4-857e-449f-8e65-663a1b67c2bf" />
-<img width="1025" height="852" alt="image" src="https://github.com/user-attachments/assets/a268fb5c-82fc-48be-8b36-584409bd8683" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/c6bc90a4-857e-449f-8e65-663a1b67c2bf" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/a268fb5c-82fc-48be-8b36-584409bd8683" />
 
 The final step of this process was creating a user. Through Active Directory, I navigated to Tools > New > User and created my first user (matching up to the host VM that I plan to use for this lab). After setting a username and password, and changing some of the settings (ex. making the password never expire - I would never do this in an actual Active Directory environment, but since this lab is islated I'm doing it for ease of use), I was finally able to join the host virtual machine with my domain.
 
-<img width="1075" height="850" alt="image" src="https://github.com/user-attachments/assets/6ee4e949-14ac-4352-a53c-e21250d924ff" />
-<img width="1076" height="853" alt="image" src="https://github.com/user-attachments/assets/a429bd33-b4d1-48e8-85b0-86fe461f11ac" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/6ee4e949-14ac-4352-a53c-e21250d924ff" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/a429bd33-b4d1-48e8-85b0-86fe461f11ac" />
 
 Through my host VM, I navigated to the Windows settings and through "Access work and school", I was able to successfully join the local Active Directory domain that I created earlier. After entering the domain name, using the login credentials created earlier for the user, and adding the account, I was successfully able to finish the set up of my Active Directory lab.
 
-<img width="946" height="853" alt="image" src="https://github.com/user-attachments/assets/cb058bbd-5ff6-4a46-b82e-3a7bc4c9b067" />
-
-
-
-
-
-
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/cb058bbd-5ff6-4a46-b82e-3a7bc4c9b067" />
 
 ## Identity and Policy Management + Testing
 
