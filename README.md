@@ -1,4 +1,4 @@
-# Active-Directory-Home-Lab-June-2026-
+# Active Directory Home Lab (June 2026)
 
 This project is meant to be an active directory home lab project that simulates an anterprise Active Directory environment using Windows Server 2022 and Windows 10 Enterprise virtual machines. Throughout this project, I will be simulating various active directory actions and responsibilities, including the following:
 - Lab Setup (Virtual Infrastructure Setup, Active Directory Deployment, Client Domain Integration)
