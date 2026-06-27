@@ -37,7 +37,7 @@ The architecture of this project was based around my home PC in which was used t
 Note: More depth to each of these phases can be found below where I explain each one in depth with screenshots
 
 Lab Setup
-- Virtual machine creation
+- Virtual machine + hypervisor creation
 - Active Directory Domain Services installation
 - Domain creation
 - Client joining the domain
@@ -70,8 +70,26 @@ In a real-world context, this lab closely reflects responsibilities commonly fou
 
 # In-Depth Explanations
 ## Lab Setup
+### Virtual Machine + Hypervisor Creation
+To start off with this lab, the very first steps were to download all of the environment tools that I needed to complete this lab in the first place. In order to get the virtual machines that I needed, I decided to use VisualBox as my hypervisor. I chose this platform after doing research on various others (ex. VMWare Workstation Pro). because I found it to have advanced features while still being simple and reliable for a prject like this. 
 
---
+To get Windows 10 working on my hypervisor, I decided to use an ISO. This allowed me to begin setting up virtual machines after configuration. While creating the virtual machines that I would mostly be using (WinPC1 and WinServer), I set the allocations to my desired amounts (2GB RAM, 1 CPU, 30GB of Disk Space. Windows 10 has aminimum hard drive requirement of 16GBs, so 30GB felt like the right move to be able to handle everything that I wanted to accomplish in Active Directory.
+
+https://github.com/kaelenokenwacyb/Active-Directory-Home-Lab-June-2026/blob/main/Images/Lab%20Setup/WinPC1%20Data%20Allocation.png?raw=true
+https://github.com/kaelenokenwacyb/Active-Directory-Home-Lab-June-2026/blob/main/Images/Lab%20Setup/Windows%20Server%20Data%20Allocation.png?raw=true
+
+After this 
+
+### Domain Creation
+
+### Active Directory Installation
+
+### Client Joining Domain
+
+
+
+
+
 
 ## Identity and Policy Management + Testing
 
