@@ -31,7 +31,7 @@ Project Architecture:
 
 The architecture of this project was based around my home PC in which was used to host this entire project. Through the use of WIndows Server 2022 (domain controller), Windows 10 virtual machine (domain client), Active Directory structure (organizational), and shared network resources, I was able to form this project in a way that simulates a real-world work environment. 
 
-![Diagram]([Images/My Physical PC.png](https://github.com/kaelenokenwacyb/Active-Directory-Home-Lab-June-2026/blob/main/Images/My%20Physical%20PC.png?raw=true))
+<img width="1800" height="1200" alt="My Physical PC" src="https://github.com/user-attachments/assets/33431bfa-4efd-4d71-beaa-f6744def3728" />
 
 
 
