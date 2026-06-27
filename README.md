@@ -79,9 +79,9 @@ To get Windows 10 working on my hypervisor, I decided to use an ISO. This allowe
 
 After this configuration, I was able to add in my Windows 10 ISO, moving me into the installation phase of the project. From this point on the WIndows installation was similar to when I installed it on my personal PC that I used to host this project. I was able to choose the drive that I had created through VirtualBox to install Windows and give it a place to carry out different processes. After having both virtual machines set up, I moved onto configuring the networks in which they would both be based on. Through VirtualBoz, I set up an IPv4 NAT Network with DHCP enabled and placed each virtual machine onto the isolated network.
 
-<img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/789188a1-da48-438b-b9bb-b79e5a839c52" />
-<img width="778" height="519" alt="image" src="https://github.com/user-attachments/assets/3120782f-d224-497c-a6b6-1c7078946f57" />
-<img width="778" height="516" alt="image" src="https://github.com/user-attachments/assets/fb9e5e71-a399-4c34-8c86-6dc16fac40c6" />
+<img width="960" height="432" alt="image" src="https://github.com/user-attachments/assets/789188a1-da48-438b-b9bb-b79e5a839c52" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/3120782f-d224-497c-a6b6-1c7078946f57" />
+<img width="490" height="320" alt="image" src="https://github.com/user-attachments/assets/fb9e5e71-a399-4c34-8c86-6dc16fac40c6" />
 
 ### Domain Creation
 
