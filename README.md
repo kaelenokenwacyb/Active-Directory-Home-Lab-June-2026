@@ -31,7 +31,7 @@ I hope that with this project, I'm able to gain real, hands-on experience as to 
 
 The architecture of this project was based around my home PC in which was used to host this entire project. Through the use of WIndows Server 2022 (domain controller), Windows 10 virtual machine (domain client), Active Directory structure (organizational), and shared network resources, I was able to form this project in a way that simulates a real-world work environment. 
 
-<img width="1800" height="1200" alt="My Physical PC" src="https://github.com/user-attachments/assets/33431bfa-4efd-4d71-beaa-f6744def3728" />
+<img width="900" height="600" alt="My Physical PC" src="https://github.com/user-attachments/assets/33431bfa-4efd-4d71-beaa-f6744def3728" />
 
 # Project Phases
 Note: More depth to each of these phases can be found below where I explain each one in depth with screenshots
