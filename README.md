@@ -68,4 +68,15 @@ Overall, these challenges reinforced the importance of methodical troubleshootin
 
 In a real-world context, this lab closely reflects responsibilities commonly found in IT support or help desk roles, such as managing user accounts, handling password resets and account lockouts, configuring access permissions, and maintaining organizational resources. This experience has helped prepare me for similar responsibilities in a professional environment and will serve as a strong foundation for my future career in IT.
 
-## In-Depth Explanations
+# In-Depth Explanations
+## Lab Setup
+
+--
+
+## Identity and Policy Management + Testing
+
+--
+
+## Powershell Automation
+
+--
