@@ -75,8 +75,8 @@ To start off with this lab, the very first steps were to download all of the env
 
 To get Windows 10 working on my hypervisor, I decided to use an ISO. This allowed me to begin setting up virtual machines after configuration. While creating the virtual machines that I would mostly be using (WinPC1 and WinServer), I set the allocations to my desired amounts (2GB RAM, 1 CPU, 30GB of Disk Space. Windows 10 has aminimum hard drive requirement of 16GBs, so 30GB felt like the right move to be able to handle everything that I wanted to accomplish in Active Directory.
 
-https://github.com/kaelenokenwacyb/Active-Directory-Home-Lab-June-2026/blob/main/Images/Lab%20Setup/WinPC1%20Data%20Allocation.png?raw=true
-https://github.com/kaelenokenwacyb/Active-Directory-Home-Lab-June-2026/blob/main/Images/Lab%20Setup/Windows%20Server%20Data%20Allocation.png?raw=true
+<img width="776" height="516" alt="image" src="https://github.com/user-attachments/assets/29c72de5-89ee-4ca6-9ff7-13807257a627" />
+<img width="778" height="517" alt="image" src="https://github.com/user-attachments/assets/df263ccf-0a07-4df8-b9c8-7d56b8b99ceb" />
 
 After this 
 
