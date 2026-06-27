@@ -196,6 +196,55 @@ The final process that I wanted to ensure that I could do within the 'Users and 
 
 Through exploring this audit list, I can keep track of what happens within my environment to gain hands-on experience with user activity management.
 
-## Powershell Automation
+## PowerShell Automation
+### AD Querying
+The final portion of this lab handled various actions with PowerShell. Using PowerShell allows you to implement scripting into this entire user management process, simplifying many tasks and allowing the administrator to make the job easier.
+
+The first process that I wanted to test through PowerShell was being able to query within my domain. AD querying allows for you to search and filter through your domain, finding information on the users, groups, and more. I researched online and tested various PowerShell commands that would return back information to me about the domain that I worked on through this entire process. First off, I started with querying my AD users, and then moving on to have this include more information, such as the user's last logon date:
+
+<img width="1023" height="857" alt="image" src="https://github.com/user-attachments/assets/155d5cdf-3748-4336-8320-9d204276bbe1" />
+<img width="1454" height="848" alt="image" src="https://github.com/user-attachments/assets/e26da9be-099e-46f4-832a-618b6e5023e5" />
+
+I decided to take this a step further, making an attempt at querying based on being able to find a specific user within my domain:
+
+<img width="1022" height="859" alt="image" src="https://github.com/user-attachments/assets/0d911cf6-1c0c-4c92-a646-06d95fa525f9" />
+
+I also wanted to ensure that this PowerShell feature would work with the groups within my domain, so I ran scripting that would return back my groups, and members of said groups as well:
+
+<img width="1454" height="849" alt="image" src="https://github.com/user-attachments/assets/658147b7-adab-4cce-8d27-28e03afac581" />
+<img width="1020" height="852" alt="image" src="https://github.com/user-attachments/assets/fde5ae02-0021-4bee-a736-dbb23c6b7102" />
+<img width="1023" height="855" alt="image" src="https://github.com/user-attachments/assets/ddff017f-9ea5-4728-b8fe-c4d76f12d414" />
+
+Lastly, I was able to display groups for specific users of the domain (ex. HR users), as well as displaying both users and group relationships at the same time:
+
+<img width="1023" height="853" alt="image" src="https://github.com/user-attachments/assets/044c4b43-3c8e-409b-bb72-2e38641e8b66" />
+<img width="1453" height="850" alt="image" src="https://github.com/user-attachments/assets/6c3d4012-f0e1-4054-90d3-868444988fe7" />
+
+### Bulk User Creation
+The next section of the domain's PowerShell automation that I wanted to test was being able to create bulk users at once, rather than doing it individually through Server Manager. In order to do this, I first had to create my own csv file (found within this repository's files) that would create a sample group of users to be added into my domain. 
+
+<img width="1021" height="853" alt="image" src="https://github.com/user-attachments/assets/4f231635-b15c-435a-8e4a-a113d4a8b50e" />
+
+I then had to create a .ps1 and write the script that would implement these users into my domain. This script would then be implemented into PowerShell through the file itself, rather than manually typing the script into PowerShell. I found this to be much easier, as it makes the process much more seamless.
+
+<img width="1020" height="846" alt="image" src="https://github.com/user-attachments/assets/955cc081-576b-40e9-8f5c-c0dbd9daf72f" />
+<img width="1022" height="853" alt="image" src="https://github.com/user-attachments/assets/4e54978e-4e5f-4e95-9c74-13db135f4944" />
+
+After successfully managing to add the .ps1 file into PowerShell and ensuring that my script worked, I ran everything and checked to ensure that the users were added into my domain. 
+
+<img width="1018" height="850" alt="image" src="https://github.com/user-attachments/assets/cabf44d6-c8a5-481d-87f4-7f2a84450dac" />
+<img width="1021" height="854" alt="image" src="https://github.com/user-attachments/assets/2bff4fcc-1ff0-4561-b476-1a36c1e624a5" />
+
+This process demosntrated to me how seamless you can make the Active Directory process, whether you decide to rely on programs such as Server Manager, or decide to use your own scripting in order to manage your domain.
+
+### Inactive Account Check
+The final part of this lab (for now!) was the ability to check for inactive accounts. I found this to be another crucial part of Active Directory, as you can see which accounts can possibly be cleared or may be unecessary in terms of your domain having excess users that it may not need.
+
+Finding this information was a much easier process. After researching online, I found the necessary functions that would allow me to find this information through PowerShell (Search-ADAccount...). With this line of scripting, I was successfully able to note which user accounts were inactive based on the timespan I specified. Since the users that I created for this lab were all new (only a few days old), it had instead returned any users that I had created but not yet logged into, such assome from the IT and Finance departments of the groups that I created earlier but not yet logged into.
+
+<img width="1024" height="851" alt="image" src="https://github.com/user-attachments/assets/26e98a22-20da-4641-a8c6-a07f07fa7be3" />
+
+## Conclusion
+With that being said, ths lab taught me a lot about how Active Directory is used for managing domains. I value what I learned within this lab as I will one day use it in the real-world, and I hope that I'm able to land a position in which I can put all of these concepts into play! As time goes on, I plan to find new fun and interesting ways to continue my work through Active Directory here on my home lab. As I discover new things to implement and test, I hope that I can further my understanding of Active Directory as a whole, and share any progress that I make here on my GitHub account for others to see. Thank you for viewing this repository!
 
 --
