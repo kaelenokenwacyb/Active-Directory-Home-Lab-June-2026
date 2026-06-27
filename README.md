@@ -42,17 +42,14 @@ Lab Setup
 - Domain creation
 - Client joining the domain
 
-Identity and Policy Management
+Identity and Policy Management + Testing
 - OU Creation
 - Users & Groups
 - Group Policy Congifuration
 - Password and lockout policies
 - Access restrictions
-
-Security Testing and Validation
-- Testing policies
-- Verifying access control
-- Simulating user restrictions
+- Verifying Access and Control
+- Audit Analysis
 
 Powershell Automation
 - Bulk user creation
